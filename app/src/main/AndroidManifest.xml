@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name="com.kevyliu.tasktimer.AppProvider"
+            android:authorities="com.kevyliu.tasktimer.provider"
+            android:exported="false"/>
     </application>
 
 </manifest>
