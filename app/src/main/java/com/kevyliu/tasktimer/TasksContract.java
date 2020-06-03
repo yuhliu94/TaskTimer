@@ -26,15 +26,20 @@ public class TasksContract {
      * The URI to access the Tasks table
      */
     public static final Uri CONTENT_URI = Uri.withAppendedPath(CONTENT_AUTHORITY_URI, TABLE_NAME);
+    // CONTENT_URI = content://com.kevyliu.tasktimer.provider/Tasks/
 
     static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd." + CONTENT_AUTHORITY + "." + TABLE_NAME;
+    // CONTENT_TYPE = vnd.android.cursor.dir/vnd.com.kevyliu.tasktimer.provider.Tasks
     static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd." + CONTENT_AUTHORITY + "." + TABLE_NAME;
+    // CONTENT_ITEM_TYPE = vnd.android.cursor.item/vnd.com.kevyliu.tasktimer.provider.Tasks
 
     static Uri buildTaskUri(long taskId) {
         return ContentUris.withAppendedId(CONTENT_URI, taskId);
+        // return content://com.kevyliu.tasktimer.provider/Tasks/{taskId}
     }
 
     static long getTaskId(Uri uri) {
         return ContentUris.parseId(uri);
+        // return {taskId}
     }
 }
